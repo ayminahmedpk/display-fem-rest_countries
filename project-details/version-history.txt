@@ -1,0 +1,8 @@
+
+
+0.1.0:
+  - important objectives outlined
+  - .gitignore additions (not really)
+  - added fem files
+  - installing dependencies
+  - init

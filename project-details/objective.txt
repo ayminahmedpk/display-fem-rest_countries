@@ -1,0 +1,10 @@
+
+
+Branch development (ticket -> branch -> merge)
+Fully TDD with Jest, RTL and MSW for the API call
+
+Typescript
+Class Syntax
+Classic Redux with Thunk for API call
+Routed SPA
+SASS + clean theme changing (SASS lists or other solution)

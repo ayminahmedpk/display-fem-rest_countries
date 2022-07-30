@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# fem
+.sketch
+# .fig # my own fig files - ok to upload
+.xd
