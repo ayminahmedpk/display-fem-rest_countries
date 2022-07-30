@@ -1,5 +1,11 @@
 
 
+0.1.1:
+  - note about coverage
+  - notes added
+  - tested with coverage (coverage folder generated)
+
+
 0.1.0:
   - important objectives outlined
   - .gitignore additions (not really)
