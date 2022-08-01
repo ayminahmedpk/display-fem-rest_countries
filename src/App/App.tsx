@@ -1,10 +1,17 @@
 import React from 'react';
 import './style/App.css';
 
+import { Provider } from 'react-redux';
+import store from '../Redux/store';
+
+import CountriesPrototype from '../Redux/features/countries/CountriesPrototype';
+
 function App() {
   return (
     <>
-    <p>Hi from App</p>
+    <Provider store={store}>
+      <CountriesPrototype/>
+    </Provider>
     </>
   );
 }
