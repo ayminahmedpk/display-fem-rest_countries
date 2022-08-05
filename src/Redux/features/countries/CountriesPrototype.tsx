@@ -34,9 +34,7 @@ class CountriesPrototype extends Component<CountriesPrototypeProps> {
 
     if (this.props.countries) {
       listOfCountries = this.props.countries.map(country => (
-        <>
         <p key={country.name.common}>{country.name.common}</p>
-        </>
       ))
     }
 
@@ -52,12 +50,9 @@ class CountriesPrototype extends Component<CountriesPrototypeProps> {
           <option value="europe">Europe</option>
           <option value="oceania">Oceania</option>
         </select>
-        {this.props.loading? <p>Loading...</p> : ''}
+        {this.props.loading? <p>Loading...</p>: ''}
+        {this.props.countries?  <p>List of countries ({this.props.countries.length}):</p> : '' }
         {listOfCountries? listOfCountries : ''}
-        {/* {this.props.countries? 
-        <p>List of countries ({this.props.countries.length})</p> :
-        ''
-        } */}
       </>
     )
   }
