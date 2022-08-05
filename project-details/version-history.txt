@@ -1,5 +1,12 @@
 
 
+0.1.2:
+  - implemented a basic countries prototype
+  - added proper redux types
+  - added redux api call for countries
+  - added Redux
+
+
 0.1.1:
   - note about coverage
   - notes added
