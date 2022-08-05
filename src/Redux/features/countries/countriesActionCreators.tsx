@@ -12,6 +12,7 @@ import { NormalAction, PayloadAction } from "../../commonReduxTypes";
 import { Countries } from "./CountriesTypes";
 import { CountriesActions, CountriesLocalActions, SelectRegionAction } from "./countriesActions";
 import { StateType } from "../../store";
+import React from "react";
 
 export const fetchCountriesRequest: ActionCreator<NormalAction> = () => ({
   type: FETCH_COUNTRIES_REQUEST
@@ -54,7 +55,7 @@ const generateApi: (selection: string) => string = (selection) => {
   }
 }
 
-export const selectRegion: (selection: string) => SelectRegionAction = (selection) => ({
+export const selectRegion: (event: React.ChangeEvent<HTMLSelectElement>) => SelectRegionAction = (event) => ({
   type: COUNTRIES_SELECT_REGION,
-  payload: selection,
+  payload: event.target.value ,
 })
