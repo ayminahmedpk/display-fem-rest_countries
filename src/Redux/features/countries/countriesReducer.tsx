@@ -4,13 +4,17 @@ import {
   FETCH_COUNTRIES_REQUEST,
   FETCH_COUNTRIES_SUCCESS,
   FETCH_COUNTRIES_FAILURE,
-} from './countriesActionTypes'
+} from './countriesConstants'
+
+import { Reducer } from 'redux';
+import { CountriesActions } from './countriesActions';
+import { Countries } from './CountriesTypes';
 
 
 export type countriesState = {
   loading   : boolean,
   countries : any,
-  error     : string | null,
+  error     : string,
 };
 
 
@@ -23,7 +27,7 @@ export type actionType = {
 const initialState : countriesState = {
   loading   : false,
   countries : null,
-  error     : null,
+  error     : '',
 };
 
 
@@ -32,7 +36,12 @@ type countriesReducerType = (
   action : actionType
 ) => countriesState;
 
-const countriesReducer : countriesReducerType = (state = initialState, action) => {
+// const countriesReducer : countriesReducerType = (state = initialState, action) => {
+
+const countriesReducer : Reducer<countriesState, CountriesActions> = (
+  state = initialState,
+  action
+) => {
   switch (action.type) {
     case FETCH_COUNTRIES_REQUEST :
       return {
@@ -41,23 +50,31 @@ const countriesReducer : countriesReducerType = (state = initialState, action) =
       }
     
     case FETCH_COUNTRIES_SUCCESS :
-      return {
-        ...state,
-        loading   : false,
-        error     : null,
-        countries : action.payload,
+      if('payload' in action) {
+        return {
+          ...state,
+          loading   : false,
+          error     : '',
+          countries : action.payload as Countries,
+        }
       }
+    break;
     
     case FETCH_COUNTRIES_FAILURE :
-      return {
-        ...state,
-        loading : false,
-        error   : action.payload,
+      if('payload' in action) {
+        return {
+          ...state,
+          loading : false,
+          error   : action.payload as string,
+        }
       }
+      break;
       
     default:
       return state;
   }
+  // Convincing TS we will always return state - type. Hacky?
+  return state;
  }
 
 

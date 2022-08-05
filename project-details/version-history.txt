@@ -1,5 +1,9 @@
 
 
+0.1.2:
+  - types added to redux
+
+
 0.1.1:
   - note about coverage
   - notes added
