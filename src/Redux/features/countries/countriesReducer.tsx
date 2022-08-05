@@ -12,15 +12,16 @@ import { Countries } from './CountriesTypes';
 
 
 export type countriesState = {
-  loading   : boolean,
-  countries : any,
-  error     : string,
+  loading   : boolean;
+  countries : any;
+  error     : string;
+  selection : string;
 };
 
 
 export type actionType = {
-  type: string,
-  payload: any,
+  type: string;
+  payload: any;
 }
 
 
@@ -28,15 +29,9 @@ const initialState : countriesState = {
   loading   : false,
   countries : null,
   error     : '',
+  selection : 'all',
 };
 
-
-type countriesReducerType = (
-  state  : countriesState,
-  action : actionType
-) => countriesState;
-
-// const countriesReducer : countriesReducerType = (state = initialState, action) => {
 
 const countriesReducer : Reducer<countriesState, CountriesActions> = (
   state = initialState,

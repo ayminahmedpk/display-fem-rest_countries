@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
 
+import { ThunkDispatch } from 'redux-thunk'
+import { ActionsType, StateType } from '../../store'
+
 import { fetchCountries } from './countriesActionCreators'
 
 class CountriesPrototype extends Component<any> {
@@ -17,7 +20,9 @@ class CountriesPrototype extends Component<any> {
 
 // const mapStateToProps = (state:any) => ({});
 
-const mapDispatchToProps = (dispatch: any) => ({
+const mapDispatchToProps = (
+  dispatch: ThunkDispatch<StateType, {}, ActionsType>
+) => ({
   fetchCountries: () => dispatch(fetchCountries()),
 })
 

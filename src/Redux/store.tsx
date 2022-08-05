@@ -10,7 +10,7 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
 import countriesReducer from "./features/countries/countriesReducer"
-import { CountriesActions } from "./features/countries/countriesActions";
+import { CountriesActions, CountriesLocalActions } from "./features/countries/countriesActions";
 
 const rootReducer = combineReducers({
   countries: countriesReducer,
@@ -24,7 +24,7 @@ const store = legacy_createStore(
       thunk,
 )));
 
-export type ActionsType = CountriesActions;
+export type ActionsType = CountriesActions | CountriesLocalActions;
 export type StateType   = ReturnType<typeof rootReducer>
 
 // console.log(store.getState());
