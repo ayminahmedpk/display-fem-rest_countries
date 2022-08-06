@@ -13,7 +13,7 @@ import { Countries } from './CountriesTypes';
 
 export type countriesState = {
   loading   : boolean;
-  countries : any;
+  countries : Countries | null;
   error     : string;
 };
 

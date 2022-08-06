@@ -51,6 +51,8 @@ export interface Country {
   borders: string[]
   area: number
   flag: string
+  flags: {svg: string} // added
+  population: number // added
 }
 
 export type Countries = Country[]

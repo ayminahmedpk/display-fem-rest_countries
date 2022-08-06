@@ -1,28 +1,30 @@
 import React, { Component } from 'react'
-import { Countries } from './CountriesTypes'
+import { Countries } from '../../Redux/features/countries/CountriesTypes'
 
 import { connect } from 'react-redux'
 
 import { ThunkDispatch } from 'redux-thunk'
-import { ActionsType, StateType } from '../../store'
+import { ActionsType, StateType } from '../../Redux/store'
 
-import { fetchCountries } from './countriesActionCreators'
+import { fetchCountries } from '../../Redux/features/countries/countriesActionCreators'
+
+import CountryCard from '../CountryCard/CountryCard';
 
 
-type CountriesPrototypeProps = {
+type CountriesPanelProps = {
   countries      : Countries | null;
   loading        : boolean;
   fetchCountries : () => void;
 }
 
-type CountriesPrototypeState = {
+type CountriesPanelState = {
   region: string;
 }
 
 
-class CountriesPrototype extends Component<CountriesPrototypeProps, CountriesPrototypeState> {
+class CountriesPanel extends Component<CountriesPanelProps, CountriesPanelState> {
 
-  constructor(props: CountriesPrototypeProps) {
+  constructor(props: CountriesPanelProps) {
     super(props)
   
     this.state = {
@@ -47,8 +49,18 @@ class CountriesPrototype extends Component<CountriesPrototypeProps, CountriesPro
       const filteredCountries = (this.state.region === 'all') ? this.props.countries :
       this.props.countries.filter((country) => (country.region === this.state.region));
 
+      // listOfCountries = filteredCountries.map(country => (
+      //   <p key={country.name.common}>{country.name.common}</p>
+      // ))
       listOfCountries = filteredCountries.map(country => (
-        <p key={country.name.common}>{country.name.common}</p>
+        <CountryCard
+          key        = {country.name.common}
+          flagURL    = {country.flags.svg}
+          name       = {country.name.common}
+          population = {country.population}
+          region     = {country.region}
+          capital    = {country.capital}
+        />
       ))
       
     }
@@ -84,4 +96,4 @@ const mapDispatchToProps = (
   fetchCountries: () => dispatch(fetchCountries()),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(CountriesPrototype);
+export default connect(mapStateToProps, mapDispatchToProps)(CountriesPanel);
