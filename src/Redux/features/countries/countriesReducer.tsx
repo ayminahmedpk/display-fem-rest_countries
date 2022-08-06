@@ -4,7 +4,6 @@ import {
   FETCH_COUNTRIES_REQUEST,
   FETCH_COUNTRIES_SUCCESS,
   FETCH_COUNTRIES_FAILURE,
-  COUNTRIES_SELECT_REGION,
 } from './countriesConstants'
 
 import { Reducer } from 'redux';
@@ -16,7 +15,6 @@ export type countriesState = {
   loading   : boolean;
   countries : any;
   error     : string;
-  selection : string;
 };
 
 
@@ -30,7 +28,6 @@ const initialState : countriesState = {
   loading   : false,
   countries : null,
   error     : '',
-  selection : 'all',
 };
 
 
@@ -63,15 +60,6 @@ const countriesReducer : Reducer<countriesState, CountriesActions | CountriesLoc
           ...state,
           loading : false,
           error   : action.payload as string,
-        }
-      }
-    break;
-
-    case COUNTRIES_SELECT_REGION :
-      if('payload' in action) {
-        return {
-          ...state,
-          selection   : action.payload as string,
         }
       }
     break;

@@ -1,6 +1,6 @@
 import {
   combineReducers,
-  createStore,  // deprecated
+  // createStore,  // deprecated
   legacy_createStore,
 } from "redux"
 
