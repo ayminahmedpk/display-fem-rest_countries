@@ -1,5 +1,10 @@
 
 
+0.1.1:
+  - Country panel testing for selection done
+  - Country panel testing hooked with MSW
+
+
 0.1.0:
   - Country panel hooked to card
   - Country panel made (select only)

@@ -69,7 +69,7 @@ class CountriesPanel extends Component<CountriesPanelProps, CountriesPanelState>
       <>
         <button onClick={this.props.fetchCountries}>Make call</button>
         <p>Select region:</p>
-        <select value={this.state.region} onChange={this.selectionHandler}>
+        <select data-testid='select-bar' value={this.state.region} onChange={this.selectionHandler}>
           <option value="all">[All]</option>
           <option value="Africa">Africa</option>
           <option value="Americas">America</option>
