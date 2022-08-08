@@ -18,7 +18,8 @@ type CountriesPanelProps = {
 }
 
 type CountriesPanelState = {
-  region: string;
+  region      : string;
+  searchQuery : string;
 }
 
 
@@ -28,7 +29,8 @@ class CountriesPanel extends Component<CountriesPanelProps, CountriesPanelState>
     super(props)
   
     this.state = {
-       region: 'all',
+       region      : 'all' ,
+       searchQuery : ''    ,
     }
   }
 
@@ -37,7 +39,12 @@ class CountriesPanel extends Component<CountriesPanelProps, CountriesPanelState>
   }
 
   selectionHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    this.setState({region: event.target.value});
+    // this.setState({region: event.target.value});
+    this.setState(state => ({...state, region: event.target.value,}));
+  }
+
+  searchInputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState(state => ({...state, searchQuery: event.target.value,}));
   }
 
   render() {
@@ -46,8 +53,17 @@ class CountriesPanel extends Component<CountriesPanelProps, CountriesPanelState>
 
     if (this.props.countries) {
       
-      const filteredCountries = (this.state.region === 'all') ? this.props.countries :
+      // Selection
+      let filteredCountries = (this.state.region === 'all') ? this.props.countries :
       this.props.countries.filter((country) => (country.region === this.state.region));
+
+      // Search Query
+      filteredCountries = (this.state.searchQuery == '') ? filteredCountries :
+      filteredCountries.filter((country) => {
+        const countryName       = country.name.common.toLowerCase();
+        const simpleSearchQuery = this.state.searchQuery.toLowerCase();
+        return (countryName.includes(simpleSearchQuery));
+      })
 
       // listOfCountries = filteredCountries.map(country => (
       //   <p key={country.name.common}>{country.name.common}</p>
@@ -68,8 +84,16 @@ class CountriesPanel extends Component<CountriesPanelProps, CountriesPanelState>
     return (
       <>
         <button onClick={this.props.fetchCountries}>Make call</button>
+        <input
+          data-testid = 'search-bar'
+          type        = "text"
+          placeholder = 'Search for country...'
+          value       = {this.state.searchQuery}
+          onChange    = {this.searchInputHandler}
+        />
         <p>Select region:</p>
-        <select data-testid='select-bar' value={this.state.region} onChange={this.selectionHandler}>
+        <select
+          data-testid='select-bar' value={this.state.region} onChange={this.selectionHandler}>
           <option value="all">[All]</option>
           <option value="Africa">Africa</option>
           <option value="Americas">America</option>
