@@ -1,5 +1,10 @@
 
 
+0.1.5:
+  - Countries panel (w select and search filtering, tested)
+  - Country card
+
+
 0.1.4:
   - fetch api and prototype rework
 
