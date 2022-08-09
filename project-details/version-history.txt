@@ -1,5 +1,10 @@
 
 
+0.1.6:
+  - countries detail
+  - routing
+
+
 0.1.5:
   - Countries panel (w select and search filtering, tested)
   - Country card

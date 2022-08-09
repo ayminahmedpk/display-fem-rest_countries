@@ -5,8 +5,9 @@ import { connect } from 'react-redux'
 
 import { ThunkDispatch } from 'redux-thunk'
 import { ActionsType, StateType } from '../../Redux/store'
-
 import { fetchCountries } from '../../Redux/features/countries/countriesActionCreators'
+
+import { Link } from 'react-router-dom'
 
 import CountryCard from '../CountryCard/CountryCard';
 
@@ -69,16 +70,19 @@ class CountriesPanel extends Component<CountriesPanelProps, CountriesPanelState>
       //   <p key={country.name.common}>{country.name.common}</p>
       // ))
       listOfCountries = filteredCountries.map(country => (
-        <CountryCard
-          key        = {country.name.common}
-          flagURL    = {country.flags.svg}
-          name       = {country.name.common}
-          population = {country.population}
-          region     = {country.region}
-          capital    = {country.capital}
-        />
+        <Link
+          key = {country.name.common}
+          to  = {`/details?country=${country.name.common}`}
+        >
+          <CountryCard
+            flagURL    = {country.flags.svg}
+            name       = {country.name.common}
+            population = {country.population}
+            region     = {country.region}
+            capital    = {country.capital}
+          />
+        </Link>
       ))
-      
     }
 
     return (

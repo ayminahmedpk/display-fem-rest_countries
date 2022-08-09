@@ -7,10 +7,13 @@ export interface OfficialAndCommon {
 }
 
 export interface CountryName extends OfficialAndCommon {
-  native: {
+  // native: {
+  nativeName: {
     [languageCode: string]: OfficialAndCommon
   }
 }
+
+// 
 
 export interface Currency {
   name: string
