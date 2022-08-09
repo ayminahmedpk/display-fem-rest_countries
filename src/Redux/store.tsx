@@ -20,7 +20,7 @@ const store = legacy_createStore(
   rootReducer,
   composeWithDevTools(
     applyMiddleware(
-      // logger,
+      logger,
       thunk,
 )));
 

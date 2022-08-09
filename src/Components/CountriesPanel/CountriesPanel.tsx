@@ -35,10 +35,6 @@ class CountriesPanel extends Component<CountriesPanelProps, CountriesPanelState>
     }
   }
 
-  componentDidMount() {
-    this.props.fetchCountries();
-  }
-
   selectionHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
     // this.setState({region: event.target.value});
     this.setState(state => ({...state, region: event.target.value,}));
@@ -59,7 +55,7 @@ class CountriesPanel extends Component<CountriesPanelProps, CountriesPanelState>
       this.props.countries.filter((country) => (country.region === this.state.region));
 
       // Search Query
-      filteredCountries = (this.state.searchQuery == '') ? filteredCountries :
+      filteredCountries = (this.state.searchQuery === '') ? filteredCountries :
       filteredCountries.filter((country) => {
         const countryName       = country.name.common.toLowerCase();
         const simpleSearchQuery = this.state.searchQuery.toLowerCase();
@@ -87,7 +83,7 @@ class CountriesPanel extends Component<CountriesPanelProps, CountriesPanelState>
 
     return (
       <>
-        <button onClick={this.props.fetchCountries}>Make call</button>
+        {/* <button onClick={this.props.fetchCountries}>Make call</button> */}
         <input
           data-testid = 'search-bar'
           type        = "text"

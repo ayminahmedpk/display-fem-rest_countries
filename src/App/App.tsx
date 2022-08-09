@@ -12,24 +12,21 @@ import { HashRouter as Router } from 'react-router-dom';
 // import CountriesPanel from '../Components/CountriesPanel/CountriesPanel';
 import SPA from '../Pages/SPA/SPA';
 
-function App() {
-  return (
-    <>
-    <Router>
-      <Provider store={store}>
-        {/* <CountryCard
-          flagURL='https://flagcdn.com/pk.svg'
-          name='Pakistan'
-          population={220892331}
-          region='Asia'
-          capital='Islamabad'
-        /> */}
-        {/* <CountriesPanel/> */}
-        <SPA></SPA>
-      </Provider>
-    </Router>
-    </>
-  );
+class App extends React.Component {
+
+  render() {
+    return (
+      <>
+      <Router>
+        <Provider store={store}>
+          <SPA/>
+        </Provider>
+      </Router>
+      </>
+    )
+  }
+
 }
+
 
 export default App;

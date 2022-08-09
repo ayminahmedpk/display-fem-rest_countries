@@ -1,8 +1,6 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 
 import { connect } from 'react-redux';
-
-import { useSearchParams } from 'react-router-dom';
 
 import { Link } from 'react-router-dom';
 
@@ -43,9 +41,7 @@ class CountryDetails extends Component<CountryDetailsProps> {
 
     // Helper
     const arrayToCommaString = (stringArray: string[]) => {
-      if (stringArray.length == 0) {
-        return 'None';
-      }
+      if (stringArray.length === 0) { return '<none>'; }
       let commaString = stringArray[0];
       if (stringArray.length > 1) {
         stringArray.slice(1).forEach(item => commaString += `, ${item}`)
@@ -65,8 +61,6 @@ class CountryDetails extends Component<CountryDetailsProps> {
     }
     const languagesText = arrayToCommaString(languagesArray);
 
-    console.log(country);
-
     let borderCCA3Array = country?.borders;
     let borderCountries:string[] = [];
     if (borderCCA3Array) {
@@ -77,7 +71,6 @@ class CountryDetails extends Component<CountryDetailsProps> {
         }
       )
     }
-    // let borderCountriesText = arrayToCommaString(borderCountries);
     const borderTags = borderCountries.map(country => <button key={country}>{country}</button> )
 
     

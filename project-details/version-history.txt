@@ -1,5 +1,9 @@
 
 
+0.1.7:
+  - moved api call to SPA to prevent redundant calls
+
+
 0.1.6:
   - countries detail
   - routing

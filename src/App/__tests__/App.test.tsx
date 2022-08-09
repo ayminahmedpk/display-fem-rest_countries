@@ -5,10 +5,10 @@ import React from "react";
 import { render, waitFor } from "@testing-library/react";
 import '@testing-library/jest-dom';
 
-import {server, rest} from '../../../msw-server/msw-server'
+import {server, rest} from '../../msw-server/msw-server'
 
 // Rendering from 'App' component to have redux functionality
-import App from '../../../App/App';
+import App from '../App';
 import userEvent from "@testing-library/user-event";
 
 // console.log(data);

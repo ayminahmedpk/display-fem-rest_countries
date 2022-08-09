@@ -3,7 +3,7 @@
 import {rest} from 'msw';
 import {setupServer} from 'msw/node';
 
-import data from '../__tests__/apiReturn-custom.json';
+import data from './data/apiReturn-custom.json';
 
 const server = setupServer(
   rest.get('https://restcountries.com/v3.1/all', (req, res, ctx) => {
