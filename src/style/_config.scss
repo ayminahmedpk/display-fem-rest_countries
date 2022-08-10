@@ -1,0 +1,38 @@
+$Dark-Blue       : hsl(209, 23%, 22%);
+$Very-Dark-Blue  : hsl(207, 26%, 17%);
+$Very-Dark-Blue  : hsl(200, 15%, 8%);
+$Dark-Gray       : hsl(0, 0%, 52%);
+$Very-Light-Gray : hsl(0, 0%, 98%);
+$White           : hsl(0, 0%, 100%);
+
+
+@mixin header-text {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@mixin normal-text {
+  font-size   : 12px;
+  font-weight : normal;
+}
+
+@mixin country-name {
+  font-size       : 18px;
+  font-weight     : 800;
+  text-decoration : none;
+}
+
+@mixin field-name {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@mixin field-value {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+a {
+  text-decoration : none;
+  color           : black;
+}

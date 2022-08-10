@@ -11,6 +11,8 @@ import { Link } from 'react-router-dom'
 
 import CountryCard from '../CountryCard/CountryCard';
 
+import './style/CountriesPanel.css';
+
 
 type CountriesPanelProps = {
   countries      : Countries | null;
@@ -68,6 +70,7 @@ class CountriesPanel extends Component<CountriesPanelProps, CountriesPanelState>
       // ))
       listOfCountries = filteredCountries.map(country => (
         <Link
+          className='country-card'
           key = {country.name.common}
           to  = {`/details?country=${country.name.common}`}
         >
@@ -83,19 +86,20 @@ class CountriesPanel extends Component<CountriesPanelProps, CountriesPanelState>
     }
 
     return (
-      <>
+      <div className="countries-panel">
         {/* <button onClick={this.props.fetchCountries}>Make call</button> */}
         <input
-          data-testid = 'search-bar'
-          type        = "text"
-          placeholder = 'Search for country...'
-          value       = {this.state.searchQuery}
-          onChange    = {this.searchInputHandler}
+        className   = 'countries-panel__search-bar'
+        data-testid = 'search-bar'
+        type        = "text"
+        placeholder = 'Search for country...'
+        value       = {this.state.searchQuery}
+        onChange    = {this.searchInputHandler}
         />
-        <p>Select region:</p>
         <select
+          className='countries-panel__select-bar'
           data-testid='select-bar' value={this.state.region} onChange={this.selectionHandler}>
-          <option value="all">[All]</option>
+          <option value="all">Filter by Region</option>
           <option value="Africa">Africa</option>
           <option value="Americas">America</option>
           <option value="Asia">Asia</option>
@@ -104,9 +108,12 @@ class CountriesPanel extends Component<CountriesPanelProps, CountriesPanelState>
         </select>
         {this.props.loading? <p>Loading...</p>: ''}
         {this.props.error? <p>Error: {this.props.error}</p>: ''}
-        {listOfCountries?  <p>List of countries ({listOfCountries.length}):</p> : '' }
-        {listOfCountries? listOfCountries : ''}
-      </>
+        {listOfCountries? (
+          <div className="country-card__container">
+             {listOfCountries}
+          </div>)
+           : ''}
+      </div>
     )
   }
 }

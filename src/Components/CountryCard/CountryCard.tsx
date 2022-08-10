@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import './style/CountryCard.css';
+
 
 type CountryCardProps = {
   flagURL    : string;
@@ -9,14 +11,6 @@ type CountryCardProps = {
   capital    : string[];
 }
 
-// const sampleProps = () => {
-//   const flagURL    = 'https://flagcdn.com/pk.svg';
-//   const name       = 'Pakistan';
-//   const population = 220892331;
-//   const region     = 'Asia'
-//   const capital    = 'Islamabad';
-// }
-
 
 export default class CountryCard extends Component<CountryCardProps> {
 
@@ -24,13 +18,28 @@ export default class CountryCard extends Component<CountryCardProps> {
     // console.log(this.props.capital)
     return (
       <>
-      <div>
-        <img src={this.props.flagURL} alt="Flag" />
-        <h2>{this.props.name}</h2>
-        <p>Population: {this.props.population.toLocaleString()}</p>
-        <p>Region: {this.props.region}</p>
-        <p>Capital: {this.props.capital}</p>
-      </div>
+      
+        <img
+          className = 'country-card__flag'
+          src       = {this.props.flagURL}
+          alt       = "Flag"
+        />
+        <p className = 'country-card__name'>{this.props.name}</p>
+        <div className="country-card__fields">
+          <div className = 'country-card__field'>
+            <span className="country-card__field-name">Population: </span>
+            <span className="country-card__field-value">{this.props.population.toLocaleString()}</span>
+          </div>
+          <div className = 'country-card__field'>
+            <span className="country-card__field-name">Region: </span>
+            <span className="country-card__field-value">{this.props.region}</span>
+          </div>
+          <div className = 'country-card__field'>
+            <span className="country-card__field-name">Capital: </span>
+            <span className="country-card__field-value">{this.props.capital}</span>
+          </div>
+        </div>
+      
       </>
     )
   }

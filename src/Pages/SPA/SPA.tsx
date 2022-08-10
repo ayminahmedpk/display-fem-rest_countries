@@ -24,15 +24,16 @@ class SPA extends Component<SPAProps> {
 
   render() {
     return (
-      <>
-      <Header/>
-      <Routes>
-        <Route path='/' element={<CountriesPanel/>} ></Route>
-        <Route path='/details' element={<CountryDetails/>} ></Route>
-      </Routes>
-      </>
+      <div className='content-container'>
+        <Header/>
+        <Routes>
+          <Route path='/' element={<CountriesPanel/>} ></Route>
+          <Route path='/details' element={<CountryDetails/>} ></Route>
+        </Routes>
+      </div>  
     )
   }
+  
 }
 
 const mapDispatchToProps = (

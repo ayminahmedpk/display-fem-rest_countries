@@ -1,0 +1,34 @@
+
+
+@import '../../../style/config';
+
+
+.country-card__container {
+  width  : 80%;
+  margin : 32px auto;
+}
+
+
+.country-card {
+  display: block;
+  box-shadow : rgba(0, 0, 0, 0.15)  2px 2px 2.5px,
+               rgba(0, 0, 0, 0.15) -2px 0px 2.5px;
+
+  & + & {
+    margin-top: 40px;
+  }
+}
+
+.country-card__flag{
+  width: 100%;
+}
+
+.country-card__name {
+  @include country-name;
+  padding: 24px 24px 0;
+}
+
+.country-card__fields { padding: 24px 24px; }
+.country-card__field { & + & {margin-top: 2px; } }
+.country-card__field-name { @include field-name; }
+.country-card__field-value { @include field-value; }
