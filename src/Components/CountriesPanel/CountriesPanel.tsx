@@ -15,6 +15,7 @@ import CountryCard from '../CountryCard/CountryCard';
 type CountriesPanelProps = {
   countries      : Countries | null;
   loading        : boolean;
+  error          : string;
   fetchCountries : () => void;
 }
 
@@ -102,6 +103,7 @@ class CountriesPanel extends Component<CountriesPanelProps, CountriesPanelState>
           <option value="Oceania">Oceania</option>
         </select>
         {this.props.loading? <p>Loading...</p>: ''}
+        {this.props.error? <p>Error: {this.props.error}</p>: ''}
         {listOfCountries?  <p>List of countries ({listOfCountries.length}):</p> : '' }
         {listOfCountries? listOfCountries : ''}
       </>
@@ -112,6 +114,7 @@ class CountriesPanel extends Component<CountriesPanelProps, CountriesPanelState>
 const mapStateToProps = (state:StateType) => ({
   countries : state.countries.countries,
   loading   : state.countries.loading,
+  error     : state.countries.error,
 });
 
 const mapDispatchToProps = (

@@ -1,5 +1,10 @@
 
 
+0.1.8:
+  - countries panel displays error when relevant
+  - axios
+
+
 0.1.7:
   - moved api call to SPA to prevent redundant calls
 

@@ -39,8 +39,9 @@ const countriesReducer : Reducer<countriesState, CountriesActions | CountriesLoc
     case FETCH_COUNTRIES_REQUEST :
       return {
         ...state,
-        countries: null,
-        loading: true,
+        countries : null,
+        loading   : true,
+        error     : '',
       }
     
     case FETCH_COUNTRIES_SUCCESS :
