@@ -8,6 +8,7 @@ import { ThunkDispatch } from 'redux-thunk'
 import { ActionsType, StateType } from '../../Redux/store'
 import { fetchCountries } from '../../Redux/features/countries/countriesActionCreators'
 
+import Header from '../../Components/Header/Header';
 import CountriesPanel from '../../Components/CountriesPanel/CountriesPanel'
 import CountryDetails from '../../Components/CountryDetails/CountryDetails'
 
@@ -24,7 +25,7 @@ class SPA extends Component<SPAProps> {
   render() {
     return (
       <>
-      <div>SPA</div>
+      <Header/>
       <Routes>
         <Route path='/' element={<CountriesPanel/>} ></Route>
         <Route path='/details' element={<CountryDetails/>} ></Route>

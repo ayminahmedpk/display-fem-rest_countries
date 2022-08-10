@@ -8,7 +8,7 @@ import { Countries, Country } from '../../Redux/features/countries/CountriesType
 
 
 
-// Becuase URL object is buggy with hash router
+// Because URL object is buggy with hash router
 import urlToEncodedParams from '../../helpers/urlToEncodedParams';
 import decodeParams from '../../helpers/decodeParams';
 import { StateType } from '../../Redux/store';

@@ -1,5 +1,7 @@
 
 
+// Comment out logger middleware in Redux/store.tsx during testing
+
 import React from "react";
 
 import { render, waitFor } from "@testing-library/react";

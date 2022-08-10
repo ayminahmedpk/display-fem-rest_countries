@@ -10,17 +10,19 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
 import countriesReducer from "./features/countries/countriesReducer"
+import themeReducer from "./features/theme/themeReducer";
 import { CountriesActions, CountriesLocalActions } from "./features/countries/countriesActions";
 
 const rootReducer = combineReducers({
-  countries: countriesReducer,
+  countries : countriesReducer,
+  theme     : themeReducer,
 });
 
 const store = legacy_createStore(
   rootReducer,
   composeWithDevTools(
     applyMiddleware(
-      logger,
+      // logger,
       thunk,
 )));
 
