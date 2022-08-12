@@ -32,6 +32,16 @@ $White           : hsl(0, 0%, 100%);
   font-weight: 300;
 }
 
+@mixin details-back {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@mixin details-name {
+  font-size: 22px;
+  font-weight: 800;
+}
+
 a {
   text-decoration : none;
   color           : black;
