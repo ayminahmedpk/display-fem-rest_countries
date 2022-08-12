@@ -11,8 +11,6 @@ import { Link } from 'react-router-dom'
 
 import CountryCard from '../CountryCard/CountryCard';
 
-import './style/CountriesPanel.css';
-
 
 type CountriesPanelProps = {
   countries      : Countries | null;

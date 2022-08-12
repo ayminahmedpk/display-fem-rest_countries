@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 
-import './style/CountryCard.css';
-
 
 type CountryCardProps = {
   flagURL    : string;
@@ -24,6 +22,7 @@ export default class CountryCard extends Component<CountryCardProps> {
           src       = {this.props.flagURL}
           alt       = "Flag"
         />
+        <div className="country-card__text">
         <p className = 'country-card__name'>{this.props.name}</p>
         <div className="country-card__fields">
           <div className = 'country-card__field'>
@@ -38,6 +37,7 @@ export default class CountryCard extends Component<CountryCardProps> {
             <span className="country-card__field-name">Capital: </span>
             <span className="country-card__field-value">{this.props.capital}</span>
           </div>
+        </div>
         </div>
       
       </>

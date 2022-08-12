@@ -1,5 +1,11 @@
 
 
+0.1.12:
+  - CSS refactored
+  - Desktop laid out
+  - Mobile improvements (grid, auto-fit)
+
+
 0.1.11:
   - Mobile UI laid out
 

@@ -8,8 +8,6 @@ import { Dispatch } from 'redux'
 import { ThemeActions } from '../../Redux/features/theme/_themeActions';
 import {toggleTheme} from '../../Redux/features/theme/themeActionCreators';
 
-import './style/Header.css';
-
 type HeaderProps = {
   isDarkMode  : boolean;
   toggleTheme : () => void;

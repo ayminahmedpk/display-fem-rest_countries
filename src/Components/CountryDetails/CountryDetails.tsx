@@ -6,8 +6,6 @@ import { Link } from 'react-router-dom';
 
 import { Countries, Country } from '../../Redux/features/countries/CountriesTypes';
 
-import './style/CountryDetails.css'
-
 
 
 // Because URL object is buggy with hash router
