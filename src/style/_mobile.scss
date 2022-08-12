@@ -28,6 +28,16 @@ html {
 //  }
 }
 
+html,
+body,
+.content-container {
+  height: 100%;
+}
+
+.content-container {
+  min-height: 100vh;
+}
+
 
 /* --------------------------------------------- */
 .header {
@@ -50,6 +60,7 @@ html {
 
 .header__dark-mode-container {
   @include normal-text;
+  cursor: pointer;
 }
 /* --------------------------------------------- */
 
@@ -74,6 +85,8 @@ html {
   margin-top : 36px;
   padding    : 16px 24px;
 
+  border : none;
+  
   cursor : pointer;
 }
 /* --------------------------------------------- */
@@ -127,8 +140,9 @@ html {
 .country-details__back {
   @include shadow;
   @include details-back;
-  margin-top       : 16px;
-  padding          : 0.5rem 2rem;
+  margin-top    : 16px;
+  margin-bottom : 64px;
+  padding       : 0.5rem 2rem;
 
   font-family      : inherit;
   background-color : white;
@@ -139,9 +153,9 @@ html {
 
 
 .country-details__flag {
-  width      : 100%;
-  margin-top : 64px;
+  width : 100%;
   @include shadow;
+  display: block;
 }
 
 
@@ -170,7 +184,7 @@ html {
 .country-details__border-tag {
   @include field-value;
   
-  padding: 0.1rem 0.5rem;
+  padding: 0.2rem 0.5rem;
 
   background-color : white;
   @include shadow;

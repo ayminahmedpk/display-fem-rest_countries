@@ -21,6 +21,16 @@ html {
   font-size: 14px;
 }
 
+html,
+body,
+.content-container {
+  height: 100%;
+}
+
+.content-container {
+  min-height: 100vh;
+}
+
 /* --------------------------------------------- */
 .header {
   display: -webkit-box;
@@ -47,6 +57,7 @@ html {
 .header__dark-mode-container {
   font-size: 12px;
   font-weight: normal;
+  cursor: pointer;
 }
 
 /* --------------------------------------------- */
@@ -67,6 +78,7 @@ html {
 .countries-panel__select-bar {
   margin-top: 36px;
   padding: 16px 24px;
+  border: none;
   cursor: pointer;
 }
 
@@ -145,6 +157,7 @@ html {
   font-size: 14px;
   font-weight: 500;
   margin-top: 16px;
+  margin-bottom: 64px;
   padding: 0.5rem 2rem;
   font-family: inherit;
   background-color: white;
@@ -154,9 +167,9 @@ html {
 
 .country-details__flag {
   width: 100%;
-  margin-top: 64px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2.5px, rgba(0, 0, 0, 0.15) -2px 0px 2.5px;
           box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2.5px, rgba(0, 0, 0, 0.15) -2px 0px 2.5px;
+  display: block;
 }
 
 .country-details__name {
@@ -190,13 +203,58 @@ html {
 .country-details__border-tag {
   font-size: 14px;
   font-weight: 300;
-  padding: 0.1rem 0.5rem;
+  padding: 0.2rem 0.5rem;
   background-color: white;
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2.5px, rgba(0, 0, 0, 0.15) -2px 0px 2.5px;
           box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2.5px, rgba(0, 0, 0, 0.15) -2px 0px 2.5px;
 }
 
 /* --------------------------------------------- */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.content-container--dark {
+  color: #CCCCCC;
+  background-color: #111517;
+}
+
+.content-container--dark .header {
+  background-color: #2b3945;
+}
+
+.content-container--dark .countries-panel__search-bar {
+  background-color: #2b3945;
+  color: inherit;
+}
+
+.content-container--dark .countries-panel__select-bar {
+  background-color: #2b3945;
+  color: inherit;
+}
+
+.content-container--dark .country-card {
+  background-color: #2b3945;
+  color: inherit;
+}
+
+.content-container--dark .country-details__back {
+  background-color: #2b3945;
+  color: #CCCCCC;
+}
+
+.content-container--dark .country-details__text {
+  background-color: #2b3945;
+  padding: 0px 24px 24px;
+  margin-top: 0px;
+}
+
+.content-container--dark .country-details__border-tag {
+  background-color: #111517;
+  color: inherit;
+}
+
 @media screen and (min-width: 500px) {
   .country-card__container {
     -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];

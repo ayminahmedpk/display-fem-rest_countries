@@ -13,7 +13,8 @@ import CountriesPanel from '../../Components/CountriesPanel/CountriesPanel'
 import CountryDetails from '../../Components/CountryDetails/CountryDetails'
 
 type SPAProps = {
-  fetchCountries: () => void
+  isDarkMode     : boolean;
+  fetchCountries : () => void
 }
 
 class SPA extends Component<SPAProps> {
@@ -23,8 +24,13 @@ class SPA extends Component<SPAProps> {
   }
 
   render() {
+    
+    let contentClass = 'content-container';
+
+    if (this.props.isDarkMode) {contentClass += ' content-container--dark';}
+
     return (
-      <div className='content-container'>
+      <div className={contentClass}>
         <Header/>
         <Routes>
           <Route path='/' element={<CountriesPanel/>} ></Route>
@@ -36,10 +42,14 @@ class SPA extends Component<SPAProps> {
   
 }
 
+const mapStateToProps = (state: StateType) => ({
+  isDarkMode: state.theme.isDarkMode,
+});
+
 const mapDispatchToProps = (
   dispatch: ThunkDispatch<StateType, {}, ActionsType>
 ) => ({
   fetchCountries: () => dispatch(fetchCountries()),
 })
 
-export default connect(null, mapDispatchToProps)(SPA);
+export default connect(mapStateToProps, mapDispatchToProps)(SPA);

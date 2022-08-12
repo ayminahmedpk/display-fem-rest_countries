@@ -92,59 +92,63 @@ class CountryDetails extends Component<CountryDetailsProps> {
             Back
           </button>
         </Link>
-        
+
         <img
           className = 'country-details__flag'
           src       = {country?.flags.svg}
           alt       = "Flag"
         />
-
-        <p className='country-details__name'>{country?.name.common}</p>
         
-        <div className="country-details__section">
+        <div className="country-details__text">
+
+          <p className='country-details__name'>{country?.name.common}</p>
+        
+          <div className="country-details__section">
+            <div className="country-details__field">
+              <span className='country-details__field-name'>Native name: </span>
+              <span className='country-details__field-value'>{country?.name.official}</span>
+            </div>
+            <div className="country-details__field">
+              <span className='country-details__field-name'>Population: </span>
+              <span className='country-details__field-value'>{country?.population.toLocaleString()}</span>
+            </div>
+            <div className="country-details__field">
+              <span className='country-details__field-name'>Region: </span>
+              <span className='country-details__field-value'>{country?.region}</span>
+            </div>
+            <div className="country-details__field">
+              <span className='country-details__field-name'>Sub region: </span>
+              <span className='country-details__field-value'>{country?.subregion}</span>
+            </div>
+            <div className="country-details__field">
+              <span className='country-details__field-name'>Capital: </span>
+              <span className='country-details__field-value'>{country?.capital}</span>
+            </div>
+          </div>
+
+          <div className="country-details__section">
           <div className="country-details__field">
-            <span className='country-details__field-name'>Native name: </span>
-            <span className='country-details__field-value'>{country?.name.official}</span>
+            <span className='country-details__field-name'>Top Level Domain: </span>
+            <span className='country-details__field-value'>{country?.tld}</span>
           </div>
           <div className="country-details__field">
-            <span className='country-details__field-name'>Population: </span>
-            <span className='country-details__field-value'>{country?.population.toLocaleString()}</span>
+            <span className='country-details__field-name'>Currencies: </span>
+            <span className='country-details__field-value'>{currencyText}</span>
           </div>
           <div className="country-details__field">
-            <span className='country-details__field-name'>Region: </span>
-            <span className='country-details__field-value'>{country?.region}</span>
+            <span className='country-details__field-name'>Languages: </span>
+            <span className='country-details__field-value'>{languagesText}</span>
           </div>
-          <div className="country-details__field">
-            <span className='country-details__field-name'>Sub region: </span>
-            <span className='country-details__field-value'>{country?.subregion}</span>
           </div>
-          <div className="country-details__field">
-            <span className='country-details__field-name'>Capital: </span>
-            <span className='country-details__field-value'>{country?.capital}</span>
+
+          <div className="country-details__section">
+            <div className="country-details__field">
+              <span className='country-details__field-name'>Border countries </span>
+              <span className='country-details__field-value'>{borderTags}</span>
+            </div>
           </div>
         </div>
 
-        <div className="country-details__section">
-        <div className="country-details__field">
-          <span className='country-details__field-name'>Top Level Domain: </span>
-          <span className='country-details__field-value'>{country?.tld}</span>
-        </div>
-        <div className="country-details__field">
-          <span className='country-details__field-name'>Currencies: </span>
-          <span className='country-details__field-value'>{currencyText}</span>
-        </div>
-        <div className="country-details__field">
-          <span className='country-details__field-name'>Languages: </span>
-          <span className='country-details__field-value'>{languagesText}</span>
-        </div>
-        </div>
-
-        <div className="country-details__section">
-          <div className="country-details__field">
-            <span className='country-details__field-name'>Border countries </span>
-            <span className='country-details__field-value'>{borderTags}</span>
-          </div>
-        </div>
         
       </div>
     )

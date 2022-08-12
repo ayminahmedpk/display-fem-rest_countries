@@ -1,0 +1,50 @@
+
+
+// @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+
+@import 'config';
+@import 'typography';
+
+
+
+
+.content-container--dark {
+
+  color: #CCCCCC;
+
+  background-color: $Very-Dark-Blue;
+
+  .header { background-color: $Dark-Blue;}
+
+  .countries-panel__search-bar {
+    background-color: $Dark-Blue;
+    color: inherit;
+  }
+
+  .countries-panel__select-bar {
+    background-color: $Dark-Blue;
+    color: inherit;
+  }
+
+  .country-card {
+    background-color: $Dark-Blue;
+    color: inherit;
+  }
+
+  .country-details__back {
+    background-color: $Dark-Blue;
+    color: #CCCCCC;
+  }
+
+  .country-details__text {
+    background-color: $Dark-Blue;
+    padding: 0px 24px 24px;
+    margin-top: 0px;
+  }
+
+  .country-details__border-tag {
+    background-color: $Very-Dark-Blue;
+    color: inherit;
+  }
+
+}
