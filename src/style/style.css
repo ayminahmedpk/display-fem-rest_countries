@@ -166,10 +166,19 @@ body,
 }
 
 .country-details__flag {
-  width: 100%;
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2.5px, rgba(0, 0, 0, 0.15) -2px 0px 2.5px;
           box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2.5px, rgba(0, 0, 0, 0.15) -2px 0px 2.5px;
   display: block;
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+}
+
+.country-details__text {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2.5px, rgba(0, 0, 0, 0.15) -2px 0px 2.5px;
+          box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2.5px, rgba(0, 0, 0, 0.15) -2px 0px 2.5px;
+  padding: 0px 24px 24px;
+  margin-top: 0px;
+  background-color: white;
 }
 
 .country-details__name {
@@ -244,10 +253,12 @@ a {
   color: #CCCCCC;
 }
 
+.content-container--dark .country-details__flag {
+  border-bottom: 1px solid #111517;
+}
+
 .content-container--dark .country-details__text {
   background-color: #2b3945;
-  padding: 0px 24px 24px;
-  margin-top: 0px;
 }
 
 .content-container--dark .country-details__border-tag {

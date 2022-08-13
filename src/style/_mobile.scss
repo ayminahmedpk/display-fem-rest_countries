@@ -153,9 +153,19 @@ body,
 
 
 .country-details__flag {
-  width : 100%;
   @include shadow;
-  display: block;
+  display       : block;
+  width         : 100%;
+  border-bottom : 1px solid lightgray;
+}
+
+
+.country-details__text {
+  @include shadow;
+  padding    : 0px 24px 24px;
+  margin-top : 0px;
+
+  background-color : white;
 }
 
 

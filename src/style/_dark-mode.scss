@@ -36,10 +36,12 @@
     color: #CCCCCC;
   }
 
+  .country-details__flag {
+    border-bottom : 1px solid $Very-Dark-Blue;
+  }
+
   .country-details__text {
     background-color: $Dark-Blue;
-    padding: 0px 24px 24px;
-    margin-top: 0px;
   }
 
   .country-details__border-tag {

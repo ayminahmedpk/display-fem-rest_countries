@@ -18,14 +18,13 @@ export class Header extends Component<HeaderProps> {
   
   render() {
     
-    // const mode = this.props.isDarkMode? '[x]' : '[ ]'
+    const toMode = this.props.isDarkMode? 'Dark' : 'Light'
     
     return (
       <header className="header">
         <div className='header__text'>Where in the world?</div>
         <div className='header__dark-mode-container'>
-          {/* <p onClick={this.props.toggleTheme}>{mode} Dark Mode</p> */}
-          <p onClick={this.props.toggleTheme}>Dark Mode</p>
+          <p onClick={this.props.toggleTheme}>Theme: {toMode}</p>
         </div>
       </header>
     )

@@ -1,5 +1,9 @@
 
 
+1.0.0:
+  - Final touches
+
+
 0.1.13:
   - Dark mode implemented
 
