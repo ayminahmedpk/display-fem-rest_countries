@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { StateType } from '../../Redux/store'
 
 import { Dispatch } from 'redux'
-import { ThemeActions } from '../../Redux/features/theme/_themeActions';
+import { ThemeActions } from '../../Redux/features/theme/themeActions';
 import {toggleTheme} from '../../Redux/features/theme/themeActionCreators';
 
 type HeaderProps = {

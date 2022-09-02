@@ -14,7 +14,7 @@ import CountryDetails from '../../Components/CountryDetails/CountryDetails'
 
 type SPAProps = {
   isDarkMode     : boolean;
-  fetchCountries : () => void
+  fetchCountries : () => void;
 }
 
 class SPA extends Component<SPAProps> {

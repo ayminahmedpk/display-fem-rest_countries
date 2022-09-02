@@ -1,8 +1,7 @@
 
 
 import { Reducer } from "redux";
-import { ThemeActions } from "./_themeActions";
-import { TOGGLE_THEME } from "./themeConstants";
+import { ThemeActions } from "./themeActions";
 
 export type ThemeState = {
   isDarkMode: boolean;
@@ -19,7 +18,7 @@ const themeReducer: Reducer<ThemeState, ThemeActions> = (
 ) => {
   switch(action.type) {
 
-    case TOGGLE_THEME:
+    case 'TOGGLE_THEME':
       return {
         ...state,
         isDarkMode: !state.isDarkMode,

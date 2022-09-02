@@ -1,32 +1,25 @@
 
 
-import {
-  FETCH_COUNTRIES_REQUEST,
-  FETCH_COUNTRIES_SUCCESS,
-  FETCH_COUNTRIES_FAILURE,
-} from "./countriesConstants"
-
-import { ActionCreator, Dispatch } from "redux";
-import { NormalAction, PayloadAction } from "../../commonReduxTypes";
+import { Dispatch } from "redux";
 import { Countries } from "./CountriesTypes";
-import { CountriesActions } from "./countriesActions";
+import { CountriesActions, FetchCountriesFailureAction, FetchCountriesRequestAction, FetchCountriesSuccessAction } from "./countriesActions";
 import axios from "axios";
 
-export const fetchCountriesRequest: ActionCreator<NormalAction> = () => ({
-  type: FETCH_COUNTRIES_REQUEST
+export const fetchCountriesRequest: () => FetchCountriesRequestAction = () => ({
+  type: 'FETCH_COUNTRIES_REQUEST',
 });
 
 // Add the right type later on
-export const fetchCountriesSuccess: ActionCreator<PayloadAction<Countries>> = (
+export const fetchCountriesSuccess: (countriesData: Countries) => FetchCountriesSuccessAction = (
   countriesData) => ({
-    type: FETCH_COUNTRIES_SUCCESS,
+    type: 'FETCH_COUNTRIES_SUCCESS',
     payload: countriesData,
 });
 
-export const fetchCountriesFailure: ActionCreator<PayloadAction<string>> = (
+export const fetchCountriesFailure: (errorMessage: string) => FetchCountriesFailureAction = (
   errorMessage
 ) => ({
-  type: FETCH_COUNTRIES_FAILURE,
+  type: "FETCH_COUNTRIES_FAILURE",
   payload: errorMessage,
 });
 

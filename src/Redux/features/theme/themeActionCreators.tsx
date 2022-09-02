@@ -1,10 +1,7 @@
 
 
-import { ActionCreator } from "redux";
-import { NormalAction } from "../../commonReduxTypes";
+import { ToggleThemeAction } from "./themeActions";
 
-import { TOGGLE_THEME } from "./themeConstants";
-
-export const toggleTheme: ActionCreator<NormalAction> = () => ({
-  type: TOGGLE_THEME,
+export const toggleTheme: () => ToggleThemeAction = () => ({
+  type: "TOGGLE_THEME",
 });

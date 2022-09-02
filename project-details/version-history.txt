@@ -1,5 +1,9 @@
 
 
+1.1.0:
+  - Redux code refactored (cleaner reducers)
+
+
 1.0.0:
   - Final touches
 
